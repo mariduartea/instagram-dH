@@ -23,9 +23,12 @@ module.exports = async (request, response, next) => {
     if (user.length) {
         response.status(400).json({erro: "Email já cadastrado."})
         return;
+        
     } else {
-        if (senha.length < 6 || senha.length > 12) {             
+        if (senha.length < 6 || senha.length > 12) {         
+
             response.status(400).json({erro: "Senha invalida."})
+
         } else {
             next();
         }        
